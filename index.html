@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name</title>
+  <style>
+    body {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1em;
+      background: #fff;
+      color: #000;
+    }
+
+    a {
+      color: #750014;
+    }
+
+    /* Status tag for papers, e.g. "revise and resubmit" */
+    .rr {
+      font-style: italic;
+      font-weight: 600;
+      color: #1a3a6c;
+      white-space: nowrap;
+    }
+
+    .left-panel {
+      float: left;
+      width: 200px;
+      padding-right: 2em;
+    }
+
+    .right-panel {
+      margin-left: 250px;
+    }
+
+    .left-panel img {
+      display: block;
+      margin-bottom: 1em;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .left-panel h1 {
+      margin: 0 0 1em 0;
+    }
+
+    h2,
+    h3 {
+      margin: 1em 0 0.5em 0;
+      margin-left: 0;
+    }
+
+    ul {
+      margin: 0 0 1em 0;
+      margin-left: 0;
+      padding-left: 2em;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    li > ul {
+      margin: 0;
+    }
+
+    .abstract {
+      display: none;
+      margin: 0.5em 0;
+      font-size: 0.95em;
+    }
+
+    /* On narrow screens, stack the sidebar above the main column */
+    @media (max-width: 700px) {
+      .left-panel {
+        float: none;
+        width: auto;
+        padding-right: 0;
+      }
+
+      .right-panel {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="left-panel">
+    <!-- Put your photo in a "pics" folder in your repo -->
+    <img src="pics/profile.jpg" alt="Your Name" width="175">
+    <h1>Your Name</h1>
+    <p>PhD Candidate<br>Department of Your Field<br>Your University</p>
+    <!-- Put your CV in a "cv" folder in your repo -->
+    <a href="cv/cv.pdf">Curriculum Vitae</a>
+    <br><br>
+    <a href="https://scholar.google.com/">Google Scholar</a>
+    <br>
+    <a href="https://github.com/your-username">GitHub</a>
+    <br>
+    <a href="https://x.com/your-handle">X / Twitter</a>
+  </div>
+
+  <div class="right-panel">
+    <hr />
+    <p>Hi, I'm [Name]. I'm a [year] PhD candidate in the Department of [Field] at [University], where I also
+      received my [degree] ([year]). Before that, I [prior role or education].</p>
+
+    <p><strong>I am on the 2026&ndash;27 academic job market.</strong> I expect to complete my PhD in [month year];
+      my committee is chaired by [Advisor], with [Member] and [Member].</p>
+
+    <p>My research studies [one or two sentences on your substantive agenda]. I also work on [methods or
+      secondary agenda].</p>
+
+    <p>At [University], I have taught [courses]. </p>
+
+    <p>You can contact me by email at <a href="mailto:you@university.edu">you@university.edu</a>.</p>
+
+    <hr />
+    <h2>Posts</h2>
+    <ul>
+      <li><a href="posts/first-post.html">Title of a Blog Post</a></li>
+      <li><a href="posts/second-post.html">Title of Another Blog Post</a></li>
+    </ul>
+
+    <hr />
+    <h2>Research</h2>
+
+    <h3>Job Market Paper</h3>
+    <ul>
+      <li>Title of Your Job Market Paper
+        <a href="research/jmp.pdf">[paper]</a>
+        <a href="javascript:void(0);" onclick="toggleAbstract('abstract-jmp')">[abstract]</a>
+        <div id="abstract-jmp" class="abstract">
+          Paste your abstract here. It stays hidden until a visitor clicks "[abstract]", then expands in place.
+        </div>
+      </li>
+    </ul>
+
+    <h3>Publications</h3>
+    <ul>
+      <li>Lastname, Firstname. (2026). Title of the Article. <em>Journal Name</em>.
+        [<a href="https://doi.org/">article</a>], [<a href="https://github.com/">code</a>]</li>
+    </ul>
+
+    <h3>Working Papers</h3>
+    <h4>Substantive</h4>
+    <ul>
+      <li>Title of a Working Paper <span class="rr">revise and resubmit</span></li>
+      <li>Title of a Working Paper (with Coauthor Name)
+        <a href="javascript:void(0);" onclick="toggleAbstract('abstract-wp2')">[abstract]</a>
+        <div id="abstract-wp2" class="abstract">
+          Another abstract. Give each one a unique id and pass that id to toggleAbstract.
+        </div>
+      </li>
+    </ul>
+
+    <h4>Methodological</h4>
+    <ul>
+      <li>Title of a Methods Paper [<a href="https://arxiv.org/">working paper</a>]</li>
+      <li>Title of a Methods Paper (with Coauthor Name) <a href="https://github.com/">[software]</a>
+        <span class="rr">under review</span></li>
+    </ul>
+
+    <h3>Software</h3>
+    <ul>
+      <li>Lastname, Firstname, and Coauthor Name. "Package Name: Short Description." R Package Version 1.0 (2026).
+      </li>
+    </ul>
+
+    <h3>Additional Work</h3>
+    <ul>
+      <li>Lastname, Firstname. (2024). Title of the Piece. <em>Outlet Name</em>.
+        [<a href="research/piece.pdf">article pdf</a>]</li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleAbstract(abstractId) {
+      const abstract = document.getElementById(abstractId);
+      const button = abstract.previousElementSibling;
+      if (abstract.style.display !== 'block') {
+        abstract.style.display = 'block';
+        button.textContent = '[hide abstract]';
+      } else {
+        abstract.style.display = 'none';
+        button.textContent = '[abstract]';
+      }
+    }
+  </script>
+</body>
+
+</html>
